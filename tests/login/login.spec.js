@@ -1,9 +1,17 @@
 import { test, expect } from '@playwright/test';
 
+const credentials = ["Admin", "admin123"]
+
+const creds = {
+
+    username : "Admin",
+    password: "admin123"
+}
+
 
 test("Verify Login with Valid Credentials", async ({ page }) => {
 
-    await page.goto("/web/index.php/auth/login")
+    await page.goto(`/web/index.php/auth/login`)
 
     await page.locator("input[name='username']").fill(process.env.ORG_USERNAME)
 
@@ -22,7 +30,7 @@ test("Verify Login with valid username and Invalid password", async ({ page }) =
 
     await page.goto("/web/index.php/auth/login")
 
-    await page.locator("input[name='username']").fill("Admin")
+    await page.locator("input[name='username']").fill(creds.username)
 
     await page.locator("input[type='password']").fill("kfhrnfk")
 

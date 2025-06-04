@@ -13,7 +13,10 @@ test('Verify Add job title functionality', async ({ page }) => {
   await page.getByRole('menuitem', { name: 'Job Titles' }).click();
   await page.getByRole('button', { name: ' Add' }).click();
   await page.getByRole('textbox').nth(1).click();
-  await page.getByRole('textbox').nth(1).fill('CEO IVI');
+
+  let randomText = (Math.random() + 1).toString(36).substring(7);// generate random text 5 characters
+  console.log(randomText); // Log the random text to the console
+  await page.getByRole('textbox').nth(1).fill('CEO '+ randomText);
   await page.getByRole('button', { name: 'Save' }).click(); // 30 sec 
 
   await expect(page.getByRole('heading', { name: 'Job Titles' })).toBeVisible(); // timeout - 30000
