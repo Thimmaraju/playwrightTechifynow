@@ -15,12 +15,12 @@ require('dotenv').config()
  */
 export default defineConfig({
 
-  // timeout: 60000,
+   timeout: 45000,
 
-  // expect: {
+  expect: {
 
-  //   timeout: 30000
-  // },
+    timeout: 30000
+  },
 
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -31,7 +31,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 1,
   //retries : 1 // local machine
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 2,
+  workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [["list"], ["html"]],
 
