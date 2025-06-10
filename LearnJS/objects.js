@@ -91,12 +91,12 @@ console.log(delivery.fees)
 
 // post 
 
-// personalinfo = {
+personalinfo = {
 
-//   firstname : "Raju",
-//   lastname :   "G"
+  firstname : "Raju",
+  lastname :   "G"
 
-// }
+}
 
 // Post ()
 // {

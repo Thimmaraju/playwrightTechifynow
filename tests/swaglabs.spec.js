@@ -2,9 +2,11 @@ import { test, expect } from '@playwright/test';
 
 test('Verify Swag Labs Login', async ({ page }) => {
 
+
+    const creds = ["standard_user", "secret_sauce"]
     await page.goto("https://www.saucedemo.com/v1/index.html")
-    await page.locator("//input[@data-test='username']").fill("standard_user")
-    await page.locator("//input[@data-test='password']").fill("secret_sauce")
+    await page.locator("//input[@data-test='username']").fill(creds[0])
+    await page.locator("//input[@data-test='password']").fill(creds[1])
     await page.locator("//input[@type='submit']").click()
 
     //assertions
