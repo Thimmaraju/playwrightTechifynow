@@ -82,3 +82,100 @@ arr6 = ['raju', 'manoj',
     revstr = str.split(" ").reverse().join("") 
 
     console.log(revstr)
+
+    //length - How many element s 
+
+    // split("") - converts string to array 
+    //join("") - converts array to string 
+
+    // concat  - joining two arrays 
+    //sort() - sort the elements in acendoing order 
+    //reverse() - reverse the arrays elements 
+
+    //arr[index] - to access to elements based on its index 
+
+  // push - will add elements at end of the array 
+
+  //unshift() will add the elements at the beginning of the array 
+
+    arr = ["eat", "sleep"]
+
+    arr.push("Wake up")
+
+     arr.push("Exersize")
+
+    arr.unshift("Raju")
+
+    console.log(arr)
+
+    //pop - will remove the last element of the array 
+    //shift - will first element of the array 
+
+
+arr2 = [ 'Raju', 'eat', 'sleep', 'Wake up', 'Exersize' ]
+
+arr2.pop()
+arr2.pop()
+
+arr2.shift()
+arr2.shift()
+
+console.log(arr2)
+
+//indexOf()
+
+arr3 = [ 'Raju', 'eat', 'sleep', 'Wake up', 'Exersize' ]
+
+x = arr3.indexOf("sleep")
+
+console.log(x)
+
+arr3[2] = "Run"
+
+console.log(arr3)
+
+//includes 
+
+console.log(arr3.includes("sleep"))  // true 
+
+
+
+arr4 = [ 'Raju', 'eat', 'sleep', 'Wake up', 'Exersize' ]
+
+arr4.forEach(element => {
+
+    console.log("loops begin")
+
+    console.log(element)
+    
+     console.log("loops ends")
+});
+
+
+
+let fruits = ['apple', 'banana', 'cherry', 'date'];
+fruits.splice(1, 2); // Remove 2 items starting from index 1
+console.log(fruits); // ['apple', 'date']
+
+let colors = ['red', 'blue'];
+colors.splice(1, 0, 'green', "navy blue"); // Add 'green' at index 1
+console.log(colors); // ['red', 'green', 'blue']
+
+
+
+// map 
+// filter 
+// reduce
+
+
+let fruits2 = ['apple', 'banana', 'cherry', 'date'];
+ 
+//fruits2.sort().reverse() // decending 
+
+
+for( let element of fruits2 ){
+
+      console.log("loops begin")
+    console.log(element)
+      console.log("loops ends")
+}

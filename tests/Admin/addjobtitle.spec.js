@@ -1,15 +1,25 @@
 import { test, expect } from '@playwright/test';
 
-const jobtitles = {
+//const jobtitles = {
 
-  title1: "SDET QA I",
-  title2: "SDET QA II",
-  title3: "SDET QA III"
-}
+//   title1: "SDET QA I",
+//   title2: "SDET QA II",
+//   title3: "SDET QA III"
+// }
 
-for (let title in jobtitles) {
+const jobtitles = ["one", "two", "three"]
 
-  test(`Verify Add job title functionality - ${jobtitles[title]} `, async ({ page }) => {
+//for (let title in jobtitles) {
+
+
+//jobtitles.forEach(title => {
+
+
+for (const title of jobtitles) {
+
+  //test(`Verify Add job title functionality - ${jobtitles[title]} `, async ({ page }) => {
+
+  test(`Verify Add job title functionality - ${title} `, async ({ page }) => {
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
     await page.getByRole('textbox', { name: 'Username' }).click();
     await page.getByRole('textbox', { name: 'Username' }).fill('Admin');
@@ -25,11 +35,16 @@ for (let title in jobtitles) {
 
     let randomText = (Math.random() + 1).toString(36).substring(7);// generate random text 5 characters
     console.log(randomText); // Log the random text to the console
-    await page.getByRole('textbox').nth(1).fill( jobtitles[title]+ randomText);
+    await page.getByRole('textbox').nth(1).fill(title + randomText);
     await page.getByRole('button', { name: 'Save' }).click(); // 30 sec 
 
     await expect(page.getByRole('heading', { name: 'Job Titles' })).toBeVisible(); // timeout - 30000
   });
 
-}
 
+  //})
+
+  //}
+
+
+}
