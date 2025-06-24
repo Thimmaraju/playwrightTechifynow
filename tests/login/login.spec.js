@@ -28,9 +28,12 @@ test.describe("Verifying login functionality", async () => {
 
         test.slow() // Triple your test timeout for this Test case 
 
-        await page.locator("input[name='username8']").fill(process.env.ORG_USERNAME)
+        // await page.locator("input[name='username8']").fill(process.env.ORG_USERNAME)
 
-        await page.locator("input[type='password']").fill(process.env.ORG_PASSWORD)
+        // await page.locator("input[type='password']").fill(process.env.ORG_PASSWORD)
+
+        await page.locator('input[class="oxd-input oxd-input--active"]').nth(0).fill("Admin")
+        await page.locator('input[class="oxd-input oxd-input--active"]').nth(1).fill("admin123")
 
         await page.locator("button[type='submit']").click()
 
