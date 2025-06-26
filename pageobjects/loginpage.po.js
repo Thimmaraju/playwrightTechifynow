@@ -21,7 +21,7 @@ exports.loginPage = class loginPage{
 
     async loginwithCreds(username, password){
 
-        await this.usernameInput.fill(username)
+        await this.usernameInput.pressSequentially(username)
         await this.passwordInput.fill(password)
         await this.loginButton.click()
 
