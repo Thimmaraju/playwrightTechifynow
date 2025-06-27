@@ -149,4 +149,6 @@ test("radio", async ({ page }) => {
     await expect(page.locator('input[value="f"]')).toBeChecked() // now female should be checked 
 
     await expect(page.locator('input[value="m"]')).not.toBeChecked() // male should be unchecked
+
+   // await page.locator('input[value="f"]').uncheck()
 })

@@ -10,11 +10,11 @@ test("Working with dropdowns - example", async ({ page }) => {
 
     //await page.locator('#country').selectOption("Bangladesh")
     //or 
-    //await page.locator('#country').selectOption({label : "Egypt"})
+   // await page.locator('#country').selectOption({label : "Egypt"})
 
     //Value  - Attribute 
 
-   //await page.locator("#country").selectOption("18")
+   //await page.locator("#country").selectOption("20")
 
     //await page.locator('#country').selectOption("101")  //Iran
     //or
