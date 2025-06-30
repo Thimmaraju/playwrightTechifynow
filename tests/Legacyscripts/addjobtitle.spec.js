@@ -7,7 +7,7 @@ import { test, expect } from '@playwright/test';
 //   title3: "SDET QA III"
 // }
 
-const jobtitles = ["one", "two", "three"]
+const jobtitles = ["one"]
 
 //for (let title in jobtitles) {
 
@@ -36,6 +36,8 @@ for (const title of jobtitles) {
     let randomText = (Math.random() + 1).toString(36).substring(7);// generate random text 5 characters
     console.log(randomText); // Log the random text to the console
     await page.getByRole('textbox').nth(1).fill(title + randomText);
+
+     await page.locator('input[type="file"]').setInputFiles('./testData/uploadfiles/11. Seven-Principles.png')
     await page.getByRole('button', { name: 'Save' }).click(); // 30 sec 
 
     await expect(page.getByRole('heading', { name: 'Job Titles' })).toBeVisible(); // timeout - 30000
