@@ -55,7 +55,7 @@ test.describe('Automation - Working With Elements', () => {
 
         const [download] = await Promise.all([
             page.waitForEvent('download'),
-            page.locator('a[href="download/learn.jpg"]').click()
+            page.locator('a[href="download/Picture 062.jpg"]').click()
         ]);
 
         const suggestedFileName = download.suggestedFilename()
@@ -69,7 +69,7 @@ test.describe('Automation - Working With Elements', () => {
     test('Download Multiple files and assert', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com/download')
 
-        const fileNames = ["LambdaTest.txt", "luminoslogo.png"]
+        const fileNames = ["image.jpeg", "LambdaTest.txt"]
 
 
         for (const fileName of fileNames) {
@@ -87,7 +87,7 @@ test.describe('Automation - Working With Elements', () => {
     test('Direct Download and assert', async ({ page }) => {
 
         // Define the image URL
-        const imageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzbTezYange_PJP3KLcuf3kr6q_5uQtRt-IgMo9p8pvmC1gWMGF9-YcaAEGk4m7l95hzZkHfCcJQ5hMQrBU43CHg';
+        const imageUrl = 'https://supertails.com/cdn/shop/articles/indian-parrot_905855fc-e32a-444b-9965-203d5ab678c6.jpg?v=1742204056';
 
         // Fetch the image using Playwright's request API
         const response = await page.request.get(imageUrl);
@@ -105,7 +105,7 @@ test.describe('Automation - Working With Elements', () => {
             }
 
             // Define the file name and path to save the image inside the 'downloads' folder
-            const savePath = path.join(downloadsFolder, 'virat.jpg');
+            const savePath = path.join(downloadsFolder, 'Parrot.jpg');
 
             // Write the buffer to a file
             fs.writeFileSync(savePath, buffer);
@@ -152,7 +152,7 @@ test.describe('Automation - Working With Elements', () => {
 
         await page.goto("https://www.flipkart.com/")
 
-        await page.locator("//span[text()='Help Center']").click()
+        await page.locator("//span[text()='Gift Cards']").click()
      })
     
 
