@@ -22,16 +22,16 @@ test('Working with Shadow DOM2', async ({ page }) => {
 
      //How to refresh the Page 
 
-      await page.reload()
+     // await page.reload()
 
       //or 
 
-     //await page.keyboard.press('F5')
+     await page.keyboard.press('F5')
 
-     await page.goBack()
+     //await page.goBack()
 
 //     await page.waitForTimeout(5000)
 
-     await page.goForward()
+     //await page.goForward()
 
 })
