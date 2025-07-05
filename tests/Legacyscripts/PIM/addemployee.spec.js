@@ -4,7 +4,7 @@ test('Verify Add Employee With Mandatory Details', async ({ page }) => {
 
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
-    await page.locator("input[name='username3']").fill("Admin")
+    await page.locator("input[name='username']").fill("Admin")
 
     await page.locator("input[type='password']").fill("admin123")
 
@@ -25,7 +25,9 @@ test('Verify Add Employee With Mandatory Details', async ({ page }) => {
 
     await page.locator("//button[@type='submit']").click()
 
+    await expect.soft(page.locator("//h6[text()='RJu123']")).toBeVisible()
+
+    await expect(page.locator("//label[text()='Employee Full Name']")).toBeVisible()
 
 
-  
 });
